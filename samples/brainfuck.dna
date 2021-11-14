@@ -1,0 +1,26 @@
+(include genesis.dna)
+
+(set ti 0)
+(set tape (map (lambda (x) 0) (range 0 256)))
+
+(set program (read (car argv)))
+(set programindex 0)
+(set interpret (lambda (p) (do 
+    (while (> programindex (len p)) (do
+        (if (= (s +) (nth programindex p)) (do
+            (update (+ (nth ti tape) 1) ti tape)
+        )(do
+        (if (= (s -) (nth programindex p)) (do
+            (update (- (nth ti tape) 1) ti tape)
+        )(do
+        (if (= (s >) (nth programindex p)) (do
+            (set ti (+ ti 1))
+        )(do
+        (if (= (s <) (nth programindex p)) (do
+            (set ti (- ti 1))
+        )(do
+        (if (= (s ?) (nth programindex p)) (do
+            (print (s not implemented))
+        )(do
+        (if (= (s .) (nth programindex p)) (do
+            (print (s not implemented)))))))))))))))))))

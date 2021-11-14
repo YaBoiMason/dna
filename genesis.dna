@@ -1,0 +1,7 @@
+(set car (lambda (x) (nth 0 x)))
+(set cdr (lambda (x) (slice x 1 (len x))))
+(set cons (lambda (x y) (+ (q x) y)))
+(set setcar (lambda (x y) (+ (q x) (cdr y))))
+(set setcdr (lambda (x y) (+ (q (car y)) x)))
+(set insert (lambda (x y z) (+ (+ (slice z 0 y) (q x)) (slice z y (len z)))))
+(set update (lambda (x y z) (+ (+ (slice z 0 y) (q x)) (slice z (+ y 1) (len z)))))

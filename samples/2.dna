@@ -1,0 +1,5 @@
+(import genesis.dna)
+
+(set two (lambda () 2))
+
+(print (two))

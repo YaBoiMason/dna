@@ -1,0 +1,32 @@
+(import genesis.dna)
+
+(set test_list (q 1 2 3))
+
+(set cons_test (cons 1 test_list))
+(set cdr_test (cdr test_list))
+(set car_test (car test_list))
+(set setcar_test (setcar 3 test_list))
+(set setcdr_test (setcdr (q 4 5) test_list))
+
+(if (= cons_test (q 1 1 2 3)) 
+    (print (s test 1 pass) cons_test)
+    (print (s test 1 fail) cons_test))
+
+(if (= cdr_test (q 2 3)) 
+    (print (s test 2 pass) cdr_test)
+    (print (s test 2 fail) cdr_test))
+
+(if (= car_test 1) 
+    (print (s test 3 pass) car_test)
+    (print (s test 3 fail) car_test))
+
+(if (= setcar_test (q 3 2 3)) 
+    (print (s test 4 pass) setcar_test)
+    (print (s test 4 fail) setcar_test))
+
+(if (= setcdr_test (q 1 4 5)) 
+    (print (s test 5 pass) setcdr_test)
+    (print (s test 5 fail) setcdr_test))
+
+(set fib (lambda (n) (if (< n 2) n (+ (fib (- n 1)) (fib (- n 2))))))
+
