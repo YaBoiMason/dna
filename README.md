@@ -1,7 +1,6 @@
 # dna: originally stood for 'definetly not apl' but now does not
 
-an esolang where it's lisp but calling functions mangles their results.
-the normal version is at `dna.py`, the mangling version is at `esodna.py`.
+a teeny tiny lisp. a version that mangles things (idk why i made it) is at esodna.py
 
 features:
     - string literals
